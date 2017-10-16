@@ -12,12 +12,18 @@ $('.trigger').click(function(){
   }
 })
 
+$('.page').click(function(){
+  if (menuOpen == true) {
+    $('.trigger').click();
+  }
+})
+
 $('.menu li').click(function(){
   var liVal = $(this).attr('value');
-  $('.trigger').click();
+  // $('.trigger').click();
   $('.page').each(function(){
     if (liVal == $(this).attr('value')){
-      $(this).show();
+      $(this).animate({'opacity':'show'}, 1000);
     } else {
       $(this).hide();
     }
